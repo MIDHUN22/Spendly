@@ -1,0 +1,58 @@
+<!-- History page fragment -->
+<div class="fade-up">
+    <h1 class="text-xl fw-700 mb-16">Transaction History</h1>
+
+    <!-- Search -->
+    <div class="search-bar mb-12 fade-up">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+        <input id="history-search" type="search" placeholder="Search merchants..." oninput="filterHistory()"
+            autocomplete="off">
+    </div>
+
+    <!-- Category filter chips -->
+    <div class="filter-chips mb-12 fade-up" id="history-filter-chips">
+        <button class="chip active" data-cat="All" onclick="setHistoryCategory(this, 'All')">All</button>
+        <button class="chip" data-cat="Food" onclick="setHistoryCategory(this, 'Food')">🍔 Food</button>
+        <button class="chip" data-cat="Transport" onclick="setHistoryCategory(this, 'Transport')">🚗 Transport</button>
+        <button class="chip" data-cat="Shopping" onclick="setHistoryCategory(this, 'Shopping')">🛍 Shopping</button>
+        <button class="chip" data-cat="Bills" onclick="setHistoryCategory(this, 'Bills')">📄 Bills</button>
+        <button class="chip" data-cat="Health" onclick="setHistoryCategory(this, 'Health')">💊 Health</button>
+        <button class="chip" data-cat="Entertainment" onclick="setHistoryCategory(this, 'Entertainment')">🎬
+            Entertainment</button>
+    </div>
+
+    <!-- Date range -->
+    <div class="flex items-center gap-8 mb-16 fade-up">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+        </svg>
+        <select class="date-range-select" id="history-date-range" onchange="filterHistory()">
+            <option value="all">All time</option>
+            <option value="week">This Week</option>
+            <option value="month" selected>This Month</option>
+            <option value="last-month">Last Month</option>
+        </select>
+        <span class="text-xs text-muted" id="history-count"></span>
+    </div>
+
+    <!-- Transaction list -->
+    <div id="history-list" class="txn-list fade-up"></div>
+
+    <!-- Empty state -->
+    <div id="history-empty" class="empty-state hidden">
+        <div class="empty-state-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#8888a8" stroke-width="1.5">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+        </div>
+        <h3>No results found</h3>
+        <p>Try changing the search or filter settings</p>
+    </div>
+</div>

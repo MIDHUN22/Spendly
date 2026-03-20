@@ -1,0 +1,43 @@
+{
+  "name": "Spendly - Expense Manager",
+  "short_name": "Spendly",
+  "description": "Track expenses with voice, camera and SMS parsing. Works offline.",
+  "start_url": "/shopify/Expns/spendly/",
+  "scope": "/shopify/Expns/spendly/",
+  "display": "standalone",
+  "background_color": "#0f0f13",
+  "theme_color": "#6c63ff",
+  "orientation": "portrait-primary",
+  "categories": [
+    "finance",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Add Expense",
+      "short_name": "Add",
+      "description": "Quickly add an expense",
+      "url": "/spendly/#add",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

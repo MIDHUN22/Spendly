@@ -1,0 +1,77 @@
+<!-- Analytics page fragment -->
+<div class="fade-up">
+    <h1 class="text-xl fw-700 mb-16">Analytics</h1>
+
+    <!-- Period tabs -->
+    <div class="period-tabs mb-20 fade-up">
+        <button class="period-tab active" data-period="month" onclick="setAnalyticsPeriod(this,'month')">Month</button>
+        <button class="period-tab" data-period="week" onclick="setAnalyticsPeriod(this,'week')">Week</button>
+        <button class="period-tab" data-period="year" onclick="setAnalyticsPeriod(this,'year')">Year</button>
+    </div>
+
+    <!-- Summary stats -->
+    <div class="stats-grid mb-20 fade-up">
+        <div class="metric-card">
+            <div class="metric-label">Avg/Day</div>
+            <div class="metric-value font-mono text-sm" id="stat-avg-day">₹0</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Highest</div>
+            <div class="metric-value font-mono text-sm" id="stat-highest">₹0</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Top Category</div>
+            <div class="metric-value text-sm" id="stat-top-cat" style="font-size:0.8rem;">—</div>
+        </div>
+    </div>
+
+    <!-- Donut chart -->
+    <div class="card mb-16 fade-up">
+        <div class="section-header mb-16">
+            <span class="section-title">By Category</span>
+        </div>
+        <div class="chart-wrap" style="height:260px;">
+            <canvas id="donut-chart"></canvas>
+        </div>
+    </div>
+
+    <!-- Bar chart -->
+    <div class="card mb-16 fade-up">
+        <div class="section-header mb-16">
+            <span class="section-title">Daily Spending</span>
+        </div>
+        <div class="chart-wrap" style="height:220px;">
+            <canvas id="bar-chart"></canvas>
+        </div>
+    </div>
+
+    <!-- Budget progress -->
+    <div class="card mb-16 fade-up">
+        <div class="section-title mb-16">Budget Progress</div>
+        <div id="budget-progress-list">
+            <!-- populated by JS -->
+        </div>
+        <div id="budget-no-budgets" class="text-sm text-muted" style="display:none;">
+            Set category budgets in <a href="#" onclick="navigateTo('settings');return false;"
+                class="text-accent">Settings</a>.
+        </div>
+    </div>
+
+    <!-- Top merchants -->
+    <div class="card fade-up">
+        <div class="section-title mb-12">Top Merchants</div>
+        <div id="top-merchants-list"></div>
+        <div id="top-merchants-empty" class="text-sm text-muted hidden">No data yet.</div>
+    </div>
+
+    <!-- Empty state -->
+    <div id="analytics-empty" class="empty-state hidden">
+        <div class="empty-state-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#8888a8" stroke-width="1.5">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+        </div>
+        <h3>No data yet</h3>
+        <p>Add expenses to see analytics</p>
+    </div>
+</div>
